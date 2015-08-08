@@ -3,21 +3,21 @@
     public struct Coin
     {
 
-        private int nominal;
-        public int Nominal
+        private int rating;
+        public int Rating
         {
-            get { return nominal; }
-            private set { nominal = value; }
+            get { return rating; }
+            private set { rating = value; }
         }
 
-        public Coin(int nom)
+        public Coin(int nom = 1)
         {
-            nominal = nom;
+            rating = nom;
         }
 
         public override string ToString()
         {
-            return string.Format("{0} руб", nominal);
+            return string.Format("{0} руб", rating);
         }
 
     }

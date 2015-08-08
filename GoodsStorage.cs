@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace VendingMachineEmulator
 {
@@ -12,6 +13,11 @@ namespace VendingMachineEmulator
             {
                 return items.First(l => string.Equals(name, l.Key.Name)).Value;  
             }
+        }
+
+        public Dictionary<Good, int>.KeyCollection Goods
+        {
+            get { return items.Keys; }
         }
 
         public void AddGood(Good good, int Amount = 1)

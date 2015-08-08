@@ -47,10 +47,14 @@
     <Compile Include="CoinStorage.cs" />
     <Compile Include="CookieMachine.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Display.cs" />
     <Compile Include="Good.cs" />
     <Compile Include="GoodsStorage.cs" />
+    <Compile Include="IDisplay.cs" />
+    <Compile Include="PriceList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="StorageBox.cs" />
     <Compile Include="VendingMachine.cs" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace VendingMachineEmulator
 {
@@ -6,9 +6,13 @@ namespace VendingMachineEmulator
     {
         static void Main(string[] args)
         {
+            VendingMachine vm = new CookieMachine();
+            vm.ServiceLoad();
+            vm.Start();
 
-            List<int> coinsValue = new List<int>() { 1, 2, 5, 10 };
+            vm.DisplayMenu();
 
+            Console.ReadKey();
         }
     }
 }
