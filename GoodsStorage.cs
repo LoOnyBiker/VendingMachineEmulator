@@ -5,39 +5,38 @@ namespace VendingMachineEmulator
     public class GoodsStorage : StorageBox<Good>
     {
 
+        // Return amount of goods with given name
         public int this[string name]
         {
             get
             {
-                return items.First(l => string.Equals(name, l.Key.Name)).Value;
+                return items.First(l => string.Equals(name, l.Key.Name)).Value;  
             }
         }
 
-        public void AddGood(Good good, int Amount)
+        public void AddGood(Good good, int Amount = 1)
         {
-            if (!items.ContainsKey(good))
-            {
-                items.Add(good, Amount);
-            }
-            else
-            {
-                items[good] += Amount;
-            }
+            if (!Contains(good))
+                items.Add(good, 0);
+            items[good] += Amount;
         }
 
-        public void RemoveGood(Good good)
+        public bool RemoveGood(Good good)
         {
-            if (items.ContainsKey(good))
+            if (Contains(good))
             {
                 if(items[good] > 0)
                 {
                     items[good] -= 1;
-                }
-                else
-                {
-                    System.Console.WriteLine("Товар отсутствует :С");
+                    return true;
                 }
             }
+            return false;
+        }
+
+        public void Remove(Good good)
+        {
+            items.Remove(good);
         }
 
     }

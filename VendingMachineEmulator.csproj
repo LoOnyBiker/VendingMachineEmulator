@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coin.cs" />
+    <Compile Include="CoinStorage.cs" />
+    <Compile Include="CookieMachine.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Good.cs" />
+    <Compile Include="GoodsStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageBox.cs" />
+    <Compile Include="VendingMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

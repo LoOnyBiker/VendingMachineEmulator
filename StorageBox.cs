@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace VendingMachineEmulator
 {
@@ -10,17 +9,8 @@ namespace VendingMachineEmulator
 
         public virtual int this[T item]
         {
-            get
-            {
-                return items[item];
-            }
-            set
-            {
-                if (!items.ContainsKey(item))
-                    Console.WriteLine("Данный элемент отсутствует!");
-                else
-                    items[item] = value;
-            }
+            get { return items[item]; }
+            set { items[item] = value; }
         }
 
         public StorageBox()
@@ -34,6 +24,11 @@ namespace VendingMachineEmulator
             {
                 return (items == null || items.Count == 0);
             }
+        }
+
+        public virtual bool Contains(T item)
+        {
+            return items.ContainsKey(item);
         }
 
         public void Clear()
