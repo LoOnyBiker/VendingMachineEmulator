@@ -1,4 +1,6 @@
-﻿namespace VendingMachineEmulator
+﻿using System;
+
+namespace VendingMachineEmulator
 {
     public class Customer
     {
@@ -14,9 +16,34 @@
             wallet.Add(coin, Amount);
         }
 
-        public void Spend(Coin coin)
+        public Coin Find()
         {
-            wallet.Remove(coin);
+            int c = int.Parse(
+                Console.ReadLine()
+                );
+            return new Coin(c);
+        }
+
+        public void Spend(Coin c, int amount = 1)
+        {
+            wallet.Remove(c);
+        }
+
+        public void LookAt(VendingMachine vm)
+        {
+            vm.Purchase(this);
+        }
+
+        public void CheckoutWallet()
+        {
+            Console.WriteLine(
+                "Вы остатриваете кошелек и обнаруживаете там {0} руб", wallet.Total);
+            wallet.ToString();
+        }
+
+        public bool isAvaliable(Coin c)
+        {
+            return wallet.Contains(c);
         }
 
     }

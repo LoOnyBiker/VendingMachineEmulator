@@ -22,6 +22,9 @@ namespace VendingMachineEmulator
         private PriceList prices;
         private MachineStatus status = MachineStatus.Shutdown;
 
+        private int totalBill = 0;
+        private Good chosen;
+
         public int CoinsTotal
         {
             get { return coinStorage.Total; }
@@ -57,25 +60,41 @@ namespace VendingMachineEmulator
             status = MachineStatus.Shutdown;
         }
 
-        public virtual void Insert(Coin coin)
+        public void Insert(Coin coin)
         {
             if (isAvaliable(coin))
                 coinStorage.Add(coin);
         }
 
-        public virtual void Insert(Customer c, Coin coin)
+        public void Insert(Customer c, Coin coin)
         {
             if (isAvaliable(coin))
+            {
                 coinStorage.Add(coin);
+                totalBill += coin.Rating;
+            }
             else
                 c.Get(coin);
         }
 
-        public virtual void Purchase()
+        public virtual void Purchase(Customer c)
         {
             if (status != MachineStatus.Shutdown)
             {
-
+                // customer make selection
+                chosen = new Good("Вафли");
+                while (!CheckTotal())
+                {
+                    c.CheckoutWallet();
+                    Coin coin = c.Find();
+                    if (c.isAvaliable(coin))
+                    {
+                        c.Spend(coin);
+                        Insert(c, coin);
+                    }
+                }
+                display.Show("Вот " + chosen.Name);
+                totalBill = 0;
             }
         }
 
@@ -108,9 +127,14 @@ namespace VendingMachineEmulator
             prices = new PriceList();
         }
 
-        private void ReturnChanges() { }
+        protected bool CheckTotal()
+        {
+            return (totalBill >= prices[chosen]);
+        }
 
-        private void DeliverGood() { }
+        protected void ReturnChanges() { }
+
+        protected void DeliverGood() { }
 
         private bool isAvaliable(Coin coin)
         {
