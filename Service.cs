@@ -1,9 +1,9 @@
-﻿namespace VendingMachineEmulator
+﻿namespace VendingMachine
 {
     public static class Service
     {
 
-        public static void ServiceLoad(this VendingMachine vm)
+        public static void ServiceLoad(this CustomVendingMachine vm)
         {
             Good g1 = new Good("Кексики");
             Good g2 = new Good("Печенье");

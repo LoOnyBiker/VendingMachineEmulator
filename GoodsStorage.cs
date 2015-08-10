@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace VendingMachineEmulator
+namespace VendingMachine.Parts
 {
     public class GoodsStorage : StorageBox<Good>
     {

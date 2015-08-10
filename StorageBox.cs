@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VendingMachineEmulator
+namespace VendingMachine.Parts
 {
     public class StorageBox<T> where T : struct
     {

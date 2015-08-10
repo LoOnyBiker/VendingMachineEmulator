@@ -44,10 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boss.cs" />
+    <Compile Include="CircuitBoard.cs" />
     <Compile Include="Coin.cs" />
+    <Compile Include="CoinChanger.cs" />
+    <Compile Include="CoinIdentify.cs" />
     <Compile Include="CoinStorage.cs" />
     <Compile Include="CookieMachine.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomVendingMachine.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Good.cs" />
     <Compile Include="GoodsStorage.cs" />
@@ -56,8 +60,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="Sorter.cs" />
     <Compile Include="StorageBox.cs" />
-    <Compile Include="VendingMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,6 @@
-﻿namespace VendingMachineEmulator
+﻿using System.Collections.Generic;
+
+namespace VendingMachine.Parts
 {
     public class CoinStorage : StorageBox<Coin>
     {
@@ -37,6 +39,8 @@
             if (!Contains(coin))
                 items.Add(coin, 0);
             items[coin] += Amount;
+
+
         }
 
         public void Remove(Coin coin, int Amount = 1)
@@ -44,6 +48,17 @@
             if (items[coin] <= 0)
                 return;
             items[coin] -= Amount;
+        }
+
+        public List<Coin> GetCoinsRating()
+        {
+            List<Coin> cl = new List<Coin>(); 
+            foreach(var item in items)
+            {
+                cl.Add(item.Key);
+            }
+
+            return cl;
         }
     }
 }

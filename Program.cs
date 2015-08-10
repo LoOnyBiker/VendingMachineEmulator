@@ -1,19 +1,20 @@
-﻿using System;
+﻿using EntireWorld;
+using System;
 
-namespace VendingMachineEmulator
+namespace VendingMachine.Emulator
 {
     class Program
     {
         static void Main(string[] args)
         {
-            VendingMachine vm = new CookieMachine();
+            CustomVendingMachine vm = new CookieMachine();
             Customer you = new Customer();
 
             vm.ServiceLoad();
-            vm.Start();
             
             you.PayDay();
             you.LookAt(vm);
+            you.MakeChoise(vm);
 
             //vm.DisplayMenu();
 

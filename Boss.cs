@@ -1,4 +1,6 @@
-﻿namespace VendingMachineEmulator
+﻿using VendingMachine;
+
+namespace EntireWorld
 {
     public static class Boss
     {

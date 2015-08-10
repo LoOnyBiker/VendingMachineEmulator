@@ -1,4 +1,4 @@
-﻿namespace VendingMachineEmulator
+﻿namespace VendingMachine
 {
     public struct Coin
     {

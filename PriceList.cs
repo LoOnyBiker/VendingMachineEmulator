@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VendingMachineEmulator
+namespace VendingMachine.Parts
 {
     public sealed class PriceList : StorageBox<Good>
     {

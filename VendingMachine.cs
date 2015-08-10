@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using VendingMachine.Parts;
 
-namespace VendingMachineEmulator
+namespace VendingMachine
 {
     public enum MachineStatus
     {
@@ -23,6 +24,8 @@ namespace VendingMachineEmulator
         private MachineStatus status = MachineStatus.Shutdown;
 
         private int totalBill = 0;
+        private int expected = 0;
+        private bool cancel = false;
         private Good chosen;
 
         public int CoinsTotal
@@ -83,8 +86,15 @@ namespace VendingMachineEmulator
             {
                 // customer make selection
                 chosen = new Good("Вафли");
+                display.Show("Вы выбрали " + chosen.Name);
+                expected = prices[chosen];
                 while (!CheckTotal())
                 {
+                    if (cancel)
+                        break;
+
+                    display.Show("Внесите " + WaitFor() + " руб");
+
                     c.CheckoutWallet();
                     Coin coin = c.Find();
                     if (c.isAvaliable(coin))
@@ -92,7 +102,11 @@ namespace VendingMachineEmulator
                         c.Spend(coin);
                         Insert(c, coin);
                     }
+
+                    if (totalBill > expected)
+                        c.Get(new Coin(totalBill-expected));
                 }
+                c.CheckoutWallet();
                 display.Show("Вот " + chosen.Name);
                 totalBill = 0;
             }
@@ -129,10 +143,29 @@ namespace VendingMachineEmulator
 
         protected bool CheckTotal()
         {
-            return (totalBill >= prices[chosen]);
+            return (totalBill >= expected);
         }
 
-        protected void ReturnChanges() { }
+        protected int WaitFor()
+        {
+            return expected - totalBill;
+        }
+
+        protected void ReturnChanges()
+        {
+            int ret = totalBill - expected;
+            var list = coinStorage.GetCoinsRating();
+
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                if ((ret % list[i].Rating) > 0)
+                {
+                    ret -= list[i].Rating;
+                    coinStorage.Remove(list[i]);
+                    returnStorage.Add(list[i]);
+                }
+            }
+        }
 
         protected void DeliverGood() { }
 

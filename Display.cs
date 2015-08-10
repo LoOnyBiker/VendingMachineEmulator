@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VendingMachineEmulator
+namespace VendingMachine.Parts
 {
     public class Display : IDisplay
     {
