@@ -28,7 +28,7 @@ namespace VendingMachine.Parts
 
         public virtual bool Contains(T item)
         {
-            return items.ContainsKey(item);
+            return (items.ContainsKey(item) && items[item] > 0);
         }
 
         public void Clear()

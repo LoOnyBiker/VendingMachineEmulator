@@ -1,6 +1,9 @@
-﻿namespace VendingMachine
+﻿using System;
+using System.Collections.Generic;
+
+namespace VendingMachine
 {
-    public struct Coin
+    public struct Coin : IComparer<Coin>
     {
 
         private int rating;
@@ -20,5 +23,13 @@
             return string.Format("{0} руб", rating);
         }
 
+        public int Compare(Coin x, Coin y)
+        {
+            if (x.rating == y.rating)
+                return 0;
+            if (x.rating < y.rating)
+                return -1;
+            return 1;
+        }
     }
 }

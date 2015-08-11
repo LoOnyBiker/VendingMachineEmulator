@@ -63,15 +63,25 @@ namespace EntireWorld
         {
             while (!vm.WaitMoney)
             {
+                if (vm.CancelOrder)
+                    break;
+
                 CheckoutWallet();
                 Coin coin = Find();
                 if (isAvaliable(coin))
                 {
                     Spend(coin);
                     vm.Insert(coin);
-                }                    
+                }
                 else
-                    Console.WriteLine("Вы не обнаруживаете в кошельке монету номиналов в "+ coin.Rating + " руб");                
+                {
+                    Console.WriteLine("Вы не обнаруживаете в кошельке монету номиналов в " + coin.Rating + " руб");
+                    Console.WriteLine();
+                    Console.Write("Отменить покупку? [д/н]");
+                    string ans = Console.ReadLine();
+                    if (ans.ToLower() == "д")
+                        vm.Cancel();
+                }                                  
             }
         }
 

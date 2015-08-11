@@ -16,8 +16,6 @@ namespace VendingMachine.Emulator
             you.LookAt(vm);
             you.MakeChoise(vm);
 
-            //vm.DisplayMenu();
-
             Console.ReadKey();
         }
     }

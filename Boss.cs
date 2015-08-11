@@ -12,10 +12,10 @@ namespace EntireWorld
             Coin c3 = new Coin(5);
             Coin c4 = new Coin(10);
 
-            c.Get(c1, 11);
-            c.Get(c2, 7);
-            c.Get(c3, 5);
-            c.Get(c4, 10);
+            c.Get(c1, 9);
+            ////c.Get(c2, 7);
+            ////c.Get(c3, 5);
+            ////c.Get(c4, 10);
         }
 
     }

@@ -1,5 +1,4 @@
-﻿using EntireWorld;
-using VendingMachine.Parts;
+﻿using VendingMachine.Parts;
 
 namespace VendingMachine
 {
@@ -10,6 +9,7 @@ namespace VendingMachine
         protected IDisplay display;
         protected GoodsStorage goodStorage;
 
+        #region Properties
         public string Name
         {
             get; protected set;
@@ -31,6 +31,13 @@ namespace VendingMachine
             get { return changer.waitMoney; }
         }
 
+        public bool CancelOrder
+        {
+            get { return changer.CancelOrder; }
+            set { changer.CancelOrder = value; }
+        }
+        #endregion
+
         public CustomVendingMachine()
         {
             InitParts();
@@ -50,12 +57,10 @@ namespace VendingMachine
                 DeliverGood(Selection);
         }
 
-        protected virtual void DisplayMenu()
+        public virtual void Cancel()
         {
-            foreach (Good item in goodStorage.Goods)
-            {
-                display.Show(item.Name+"\t"+changer.Prices[item]);
-            }
+            CancelOrder = true;
+            
         }
 
         public virtual void WaitForChoise()
@@ -69,8 +74,12 @@ namespace VendingMachine
             changer.Prices.AddGood(good, price);
         }
 
-        protected virtual void CalculateChange() { }
+        public bool Contain(Good g)
+        {
+            return goodStorage.Contains(g);
+        }
 
+        #region Protected methods
         protected virtual void InitParts()
         {
             display = new Display();
@@ -79,15 +88,20 @@ namespace VendingMachine
             changer = new CoinChanger(display, returnChange);
         }
 
+        protected virtual void DisplayMenu()
+        {
+            foreach (Good item in goodStorage.Goods)
+            {
+                display.Show(item.Name + "\t" + changer.Prices[item]);
+            }
+        }
+
         protected void DeliverGood(Good good)
         {
             goodStorage.RemoveGood(good);
             display.Show("В лоток выпал товар: " + good.Name);
+            changer.CalculateChange();
         }
-
-        public bool Contain(Good g)
-        {
-            return goodStorage.Contains(g);
-        }
+        #endregion        
     }
 }

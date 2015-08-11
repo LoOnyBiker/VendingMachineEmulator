@@ -2,9 +2,9 @@
 {
     public sealed class CircuitBoard
     {
-
         private int _expected;
         private Good _chosen;
+        private int currentBill;
 
         #region Properties
         public GoodsStorage PriceList
@@ -25,20 +25,22 @@
                 _chosen = value;
             }
         }
-        
-        public int currentBill
-        {
-            get; set;
-        }
 
         public bool isExactChange
         {
             get { return currentBill >= _expected; }
         }
 
-        public int GetChange
+        public int Change
         {
             get { return currentBill - _expected; }
+            set { _expected = value; }
+        }
+
+        public int CurrentBill
+        {
+            get { return currentBill; }
+            set { currentBill = value; }
         }
 
         public int WaitFor
