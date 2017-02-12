@@ -4,9 +4,6 @@ namespace VendingMachine
 {
     public class CustomVendingMachine
     {
-        protected CoinChanger changer;
-        protected CoinStorage returnChange;
-        protected IDisplay display;
         protected GoodsStorage goodStorage;
 
         #region Properties
@@ -15,7 +12,7 @@ namespace VendingMachine
             get; protected set;
         }
 
-        public bool WaitMoney
+        /*public bool WaitMoney
         {
             get { return changer.waitMoney; }
         }
@@ -35,22 +32,22 @@ namespace VendingMachine
         {
             get { return changer.CancelOrder; }
             set { changer.CancelOrder = value; }
-        }
+        }*/
         #endregion
 
         public CustomVendingMachine()
         {
-            InitParts();
+            //InitParts();
             Name = "unknown VM";
         }
 
         public CustomVendingMachine(string name)
         {
-            InitParts();
+            // InitParts();
             Name = name;
         }
 
-        public virtual void Insert(Coin coin)
+        /*public virtual void Insert(Coin coin)
         {
             changer.Process(coin);
             if (ExactChange)
@@ -72,13 +69,13 @@ namespace VendingMachine
         {
             goodStorage.AddGood(good, amount);
             changer.Prices.AddGood(good, price);
-        }
+        }*/
 
         public bool Contain(Good g)
         {
             return goodStorage.Contains(g);
         }
-
+        /*
         #region Protected methods
         protected virtual void InitParts()
         {
@@ -102,6 +99,7 @@ namespace VendingMachine
             display.Show("В лоток выпал товар: " + good.Name);
             changer.CalculateChange();
         }
-        #endregion        
+        #endregion    
+        */    
     }
 }

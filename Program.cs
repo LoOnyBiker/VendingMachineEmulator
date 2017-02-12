@@ -7,6 +7,7 @@ namespace VendingMachine.Emulator
     {
         static void Main(string[] args)
         {
+            /*
             CustomVendingMachine vm = new CookieMachine();
             Customer you = new Customer();
 
@@ -15,7 +16,7 @@ namespace VendingMachine.Emulator
             you.PayDay();
             you.LookAt(vm);
             you.MakeChoise(vm);
-
+            */
             Console.ReadKey();
         }
     }

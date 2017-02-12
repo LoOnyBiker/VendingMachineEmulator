@@ -4,7 +4,7 @@ using VendingMachine.Parts;
 
 namespace EntireWorld
 {
-    public class Customer
+    /*public class Customer
     {
         private CoinStorage wallet;
 
@@ -97,6 +97,5 @@ namespace EntireWorld
         {
             return (wallet.Contains(c) && wallet[c] > 0);
         }
-
-    }
+    }*/
 }

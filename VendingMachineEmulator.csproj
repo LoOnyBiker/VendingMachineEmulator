@@ -43,19 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boss.cs" />
-    <Compile Include="CircuitBoard.cs" />
     <Compile Include="Coin.cs" />
-    <Compile Include="CoinChanger.cs" />
-    <Compile Include="CoinIdentify.cs" />
-    <Compile Include="CoinStorage.cs" />
-    <Compile Include="CookieMachine.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomVendingMachine.cs" />
-    <Compile Include="Display.cs" />
     <Compile Include="Good.cs" />
     <Compile Include="GoodsStorage.cs" />
-    <Compile Include="IDisplay.cs" />
     <Compile Include="PriceList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
