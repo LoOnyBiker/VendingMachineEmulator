@@ -7,14 +7,19 @@ namespace VendingMachine
         protected GoodsStorage goodStorage;
 
         #region Properties
-        public string Name
-        {
+        // Name of machine, e.g. "Cookie vending machine"
+        public string Name {
+            get; protected set;
+        }
+
+        // Link to Customer object that iteract with machine
+        // Could be a queue of Customer objects or smth like that
+        public Customer client {
             get; protected set;
         }
         #endregion
 
-        public CustomVendingMachine(string name = "unknown VM")
-        {
+        public CustomVendingMachine(string name = "unknown VM") {
             Name = name;
         }
 
@@ -31,21 +36,17 @@ namespace VendingMachine
             changer.Prices.AddGood(good, price);
         }*/
 
-        public bool Contain(Good g)
-        {
+        public bool Contain(Good g) {
             return goodStorage.Contains(g);
         }
 
-        /*
+
         #region Protected methods
-        protected virtual void DisplayMenu()
-        {
-            foreach (Good item in goodStorage.Goods)
-            {
-                display.Show(item.Name + "\t" + changer.Prices[item]);
-            }
+        protected virtual void displayMenu() {
+            // foreach (Good item in goodStorage.Goods) {
+            //     display.Show(item.Name + "\t" + changer.Prices[item]);
+            // }
         }
-        #endregion    
-        */    
+        #endregion
     }
 }

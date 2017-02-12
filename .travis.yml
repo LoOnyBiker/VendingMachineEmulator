@@ -1,5 +1,11 @@
 language: csharp
 solution: VendingMachineEmulator.sln
+
+os:
+  - linux
+  - osx
+
+
 # script:    # the following commands are just examples, use whatever your build process requires
 #   - ./build.sh
 #   - ./test.sh

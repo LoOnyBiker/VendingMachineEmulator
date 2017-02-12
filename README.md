@@ -1,5 +1,10 @@
+-------
 [![Build Status](https://travis-ci.org/LoOnyBiker/VendingMachineEmulator.svg?branch=develop)](https://travis-ci.org/LoOnyBiker/VendingMachineEmulator)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/06p7x5lifwro7h8p/branch/master?svg=true)](https://ci.appveyor.com/project/LoOnyBiker/vendingmachineemulator/branch/master)
+
+[![Discord](https://img.shields.io/badge/Discord-%2FNoN%2Famer-green.svg)](https://discord.gg/pesvDPr)
+-------
 Напишите консольное приложение, эмулирующее взаимодействие покупателя с торговым автоматом с печеньками.
 
 Автомат предлагает меню: кексы по 50р 4 шт., печенье по 10р 3 шт. и вафли по 30р 10шт.
@@ -38,7 +43,7 @@
 
 * Выполнение условий задачи
 
-Следование ООП
+* Следование ООП
 
 * Читаемость кода
 
