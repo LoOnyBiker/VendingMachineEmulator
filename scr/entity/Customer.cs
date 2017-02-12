@@ -1,6 +1,4 @@
-﻿using System;
-using VendingMachine;
-using VendingMachine.Parts;
+﻿using VendingMachine;
 
 namespace World
 {

@@ -14,8 +14,8 @@ namespace VendingMachine
 
         // Link to Customer object that iteract with machine
         // Could be a queue of Customer objects or smth like that
-        public Customer client {
-            get; protected set;
+        public World.Customer client {
+            get; set;
         }
         #endregion
 
@@ -42,7 +42,7 @@ namespace VendingMachine
 
 
         #region Protected methods
-        protected virtual void displayMenu() {
+        public virtual void displayMenu() {
             // foreach (Good item in goodStorage.Goods) {
             //     display.Show(item.Name + "\t" + changer.Prices[item]);
             // }

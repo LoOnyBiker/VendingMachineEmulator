@@ -1,4 +1,4 @@
-﻿using EntireWorld;
+﻿using World;
 using System;
 
 namespace VendingMachine.Emulator
@@ -17,7 +17,7 @@ namespace VendingMachine.Emulator
             Customer you = new Customer(150);
 
             // Interaction with vendong machine
-            // you.Interact(vm);
+            you.interact(vm);
         }
     }
 }
