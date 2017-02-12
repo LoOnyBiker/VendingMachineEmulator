@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/LoOnyBiker/VendingMachineEmulator.svg?branch=develop)](https://travis-ci.org/LoOnyBiker/VendingMachineEmulator)
+
 Напишите консольное приложение, эмулирующее взаимодействие покупателя с торговым автоматом с печеньками.
 
 Автомат предлагает меню: кексы по 50р 4 шт., печенье по 10р 3 шт. и вафли по 30р 10шт.
