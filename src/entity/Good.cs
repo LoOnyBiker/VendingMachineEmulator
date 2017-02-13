@@ -10,17 +10,12 @@
             private set { name = value; }
         }
 
-        
-        public Good(string name = "unknown goodie")
-        {
+        public Good(string name = "unknown goodie") {
             this.name = name;
         }
 
-
-        public override string ToString()
-        {
+        public override string ToString() {
             return name;
         }
-
     }
 }

@@ -43,17 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="scr\entity\Coin.cs" />
-    <Compile Include="scr\entity\Customer.cs" />
-    <Compile Include="scr\CustomVendingMachine.cs" />
-    <Compile Include="scr\entity\Good.cs" />
-    <Compile Include="scr\GoodsStorage.cs" />
-    <Compile Include="scr\PriceList.cs" />
-    <Compile Include="scr\Program.cs" />
+    <Compile Include="src\entity\Coin.cs" />
+    <Compile Include="src\entity\Customer.cs" />
+    <Compile Include="src\CustomVendingMachine.cs" />
+    <Compile Include="src\entity\Good.cs" />
+    <Compile Include="src\GoodsStorage.cs" />
+    <Compile Include="src\PriceList.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="scr\Service.cs" />
-    <Compile Include="scr\Sorter.cs" />
-    <Compile Include="scr\StorageBox.cs" />
+    <Compile Include="src\Service.cs" />
+    <Compile Include="src\Sorter.cs" />
+    <Compile Include="src\StorageBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

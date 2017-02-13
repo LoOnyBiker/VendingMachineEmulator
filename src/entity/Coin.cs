@@ -13,18 +13,15 @@ namespace VendingMachine
             private set { rating = value; }
         }
 
-        public Coin(int nominal = 1)
-        {
+        public Coin(int nominal = 1) {
             rating = nominal;
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return string.Format("{0} rub", rating);
         }
 
-        public int Compare(Coin x, Coin y)
-        {
+        public int Compare(Coin x, Coin y) {
             if (x.rating == y.rating)
                 return 0;
             if (x.rating < y.rating)

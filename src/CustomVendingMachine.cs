@@ -21,6 +21,7 @@ namespace VendingMachine
 
         public CustomVendingMachine(string name = "unknown VM") {
             Name = name;
+            goodStorage = new GoodsStorage();
         }
 
         /*public virtual void Insert(Coin coin)
@@ -28,13 +29,12 @@ namespace VendingMachine
             changer.Process(coin);
             if (ExactChange)
                 DeliverGood(Selection);
-        }
-
-        public virtual void LoadGoods(Good good,int price, int amount)
-        {
-            goodStorage.AddGood(good, amount);
-            changer.Prices.AddGood(good, price);
         }*/
+
+        public virtual void LoadGoods(Good good, int amount)
+        {
+            goodStorage.add(good, amount);
+        }
 
         public bool Contain(Good g) {
             return goodStorage.Contains(g);
@@ -43,9 +43,9 @@ namespace VendingMachine
 
         #region Protected methods
         public virtual void displayMenu() {
-            // foreach (Good item in goodStorage.Goods) {
-            //     display.Show(item.Name + "\t" + changer.Prices[item]);
-            // }
+            foreach (Good item in goodStorage.Goods) {
+                // display.show(item.Name + "\t" + prices[item]);
+            }
         }
         #endregion
     }
