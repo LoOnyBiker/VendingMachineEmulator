@@ -1,12 +1,38 @@
 version: 1.0.{build}
+
+branches:
+  only:
+    - master
+    - develop
+
+  # except:
+  #   - playground
+
+# this is how to allow failing jobs in the matrix
+matrix:
+  fast_finish: true # set this flag to immediately finish build once one of the jobs fails.
+  allow_failures:
+    - platform: x86
+      configuration: Release
+    - platform: x64
+      configuration: Release
+
+platform:
+  - x86
+  - x64
+  - Any CPU
+
 build:
   verbosity: minimal
   project: VendingMachineEmulator.sln
 
+build:
+  parallel: true # enable MSBuild parallel builds
+
 notifications:
   - provider: Webhook
     url: https://discordapp.com/api/webhooks/280394698097426434/Y0p20s8TyXoCPeYenRl8QdAGy7dy2nW9ue_cDXwL3r0zOJQQGpQlxdCvjotYUlPNXtL8/appveyor
-    method: GET
+    method: POST
     on_build_success: true
     on_build_failure: true
     on_build_status_changed: true
