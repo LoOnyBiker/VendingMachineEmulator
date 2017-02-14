@@ -10,6 +10,3 @@ notifications:
     on_build_success: true
     on_build_failure: true
     on_build_status_changed: true
-
-  headers:
-    - User-Agent: myapp 1.0
