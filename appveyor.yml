@@ -12,4 +12,4 @@ notifications:
     on_build_status_changed: true
 
   headers:
-        User-Agent: myapp 1.0
+    - User-Agent: myapp 1.0
