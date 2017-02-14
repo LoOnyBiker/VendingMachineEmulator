@@ -51,8 +51,6 @@
     <Compile Include="src\PriceList.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Service.cs" />
-    <Compile Include="src\Sorter.cs" />
     <Compile Include="src\StorageBox.cs" />
   </ItemGroup>
   <ItemGroup>

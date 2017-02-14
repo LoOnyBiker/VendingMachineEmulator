@@ -27,8 +27,8 @@ namespace VendingMachine.Parts
         /**
          * Try to remove one good from storage.
          * Return false if there's no given good
-         * @param  {[type]} Good good          [description]
-         * @return {[type]}      [description]
+         * @param  {Good}
+         * @return {Boolean}
          */
         public bool remove(Good good) {
             if (Contains(good)) {

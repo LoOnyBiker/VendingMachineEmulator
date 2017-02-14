@@ -10,6 +10,10 @@ namespace World
             wallet = coins;
         }
 
+        public int getMoneyInWallet() {
+            return wallet;
+        }
+
         public void interact(CustomVendingMachine cvm) {
             cvm.client = this;
             cvm.displayMenu();

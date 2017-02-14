@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace VendingMachine.Parts
 {
@@ -18,6 +19,10 @@ namespace VendingMachine.Parts
 
         public StorageBox() {
             items = new Dictionary<T, int>();
+        }
+
+        public int getAmount(int index) {
+            return items.ElementAt(index).Value;
         }
 
         public virtual bool isEmpty {
