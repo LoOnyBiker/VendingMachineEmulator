@@ -25,8 +25,6 @@ platform:
 build:
   verbosity: minimal
   project: VendingMachineEmulator.sln
-
-build:
   parallel: true # enable MSBuild parallel builds
 
 notifications:
