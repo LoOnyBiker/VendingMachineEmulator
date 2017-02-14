@@ -3,6 +3,13 @@ build:
   verbosity: minimal
   project: VendingMachineEmulator.sln
 
-deploy:
+notifications:
   - provider: Webhook
-    url: https://discordapp.com/api/webhooks/280394698097426434/Y0p20s8TyXoCPeYenRl8QdAGy7dy2nW9ue_cDXwL3r0zOJQQGpQlxdCvjotYUlPNXtL8
+    url: https://discordapp.com/api/webhooks/280394698097426434/Y0p20s8TyXoCPeYenRl8QdAGy7dy2nW9ue_cDXwL3r0zOJQQGpQlxdCvjotYUlPNXtL8/appveyor
+    method: GET
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
+
+  headers:
+        User-Agent: myapp 1.0

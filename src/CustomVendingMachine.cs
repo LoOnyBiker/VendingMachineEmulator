@@ -31,12 +31,11 @@ namespace VendingMachine
                 DeliverGood(Selection);
         }*/
 
-        public virtual void LoadGoods(Good good, int amount)
-        {
+        public virtual void load(Good good, int amount) {
             goodStorage.add(good, amount);
         }
 
-        public bool Contain(Good g) {
+        public bool contain(Good g) {
             return goodStorage.Contains(g);
         }
 
