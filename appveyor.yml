@@ -20,7 +20,6 @@ matrix:
 platform:
   - x86
   - x64
-  - Any CPU
 
 build:
   verbosity: minimal
